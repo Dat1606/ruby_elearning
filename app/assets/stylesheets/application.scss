@@ -216,3 +216,35 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-button {
   top:45% !important;
 }
+
+.sign_up_button {
+  margin-top: 10px;
+}
+
+.modal-body {
+  height: 500px;
+}
+
+.submit-btn {
+  float: right;
+  margin-top: 10px;
+}
+
+.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.modal-body-title {
+  text-align: center;
+  color: #3498DB;
+}
