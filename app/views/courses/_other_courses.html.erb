@@ -1,0 +1,7 @@
+<%= link_to course do %>
+  <div class="other-courses col-md-4">
+    <%=image_tag course.image.url, class: "other-courses-image col-md-4" %>
+    <span><%= link_to course.name, course %></span>
+    <span class="other-courses-description col-md-8"><%= truncate(course.description, length:90) %></span>
+  </div>
+<% end %>
