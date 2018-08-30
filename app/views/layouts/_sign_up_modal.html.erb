@@ -1,0 +1,36 @@
+<div class="modal" id="signup">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t"join_us_to" %></h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="sign_up">
+          <h1 class="modal-body-title"><b><i><%= t "sign_up" %></i></b></h1>
+          <div class="col-md-6 col-md-offset-3">
+            <%= form_for(@user, url: signup_path) do |f| %>
+              <%= render "shared/error_messages", object: f.object %>
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control" %>
+
+              <%= f.label :email %>
+              <%= f.email_field :email, class: "form-control" %>
+
+              <%= f.label :password %>
+              <%= f.password_field :password, class: "form-control" %>
+
+              <%= f.label :password_confirmation, t(".retype_password") %>
+              <%= f.password_field :password_confirmation, class: "form-control" %>
+              <%= f.submit (t "create_account"), class: "btn btn-primary submit-btn" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
