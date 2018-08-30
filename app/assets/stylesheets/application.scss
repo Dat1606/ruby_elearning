@@ -322,3 +322,32 @@ h1, h2, h3, h4, h5, h6 {
 .other-courses-description {
   padding: 0;
 }
+
+.word-list {
+  padding: 70px;
+  margin-left: 100px;
+  font-weight: 300;
+  list-style: decimal;
+}
+
+.vocabulary {
+  color: #22558a;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3.2em;
+  margin-top: 90px;
+  z-index: 1;
+  position: relative;
+}
+
+.vocabulary-description {
+  display: block;
+  color: #666;
+  font-size: 1.6em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.vocabulary-example {
+  color: #666;
+  font-size: 1em;
+  font-style: italic;
+}

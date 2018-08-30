@@ -2,6 +2,8 @@
   <div class="current-course col-md-8 left-side">
     <%=image_tag @current_course.image.url, class: "course-image" %>
     <p class="course-description "><%= @current_course.description %></p>
+    <h2><%= t "we_provide_lesson" %></h2>
+    <%= render @lessons %>
   </div>
   <h3><%= t "other_course" %></h3>
   <%= render partial: "courses/other_courses", collection: @other_courses, as: :course %>

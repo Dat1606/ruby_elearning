@@ -1,0 +1,8 @@
+<li><p class="vocabulary"><%= vocabulary.name %></p>
+  <p class="vocabulary-description"><%= vocabulary.description %></p>
+  <p class="vocabulary-example"><%= t "example" %><%= vocabulary.example %></p>
+  <!-- This condition is to recognize the vocabulary is Alpabet or not -->
+  <% if ("a".."z") === vocabulary.name[1] %>
+    <a href="https://en.oxforddictionaries.com/definition/<%= vocabulary.name %>" target="_blank"><%= t "oxford_dictionary" %></a>
+  <% end%>
+</li>
