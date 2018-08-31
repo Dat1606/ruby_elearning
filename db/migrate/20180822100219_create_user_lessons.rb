@@ -3,9 +3,9 @@ class CreateUserLessons < ActiveRecord::Migration[5.2]
     create_table :user_lessons do |t|
       t.references :lesson
       t.references :user
-      t.integer :percent
-      t.boolean :status
-      t.integer :point
+      t.integer :percent, default: 0
+      t.boolean :status, default: false
+      t.integer :point, default: 0
 
       t.timestamps
     end

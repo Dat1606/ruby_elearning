@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_100621) do
   create_table "answers", force: :cascade do |t|
     t.integer "vocabulary_id"
     t.text "content"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["vocabulary_id"], name: "index_answers_on_vocabulary_id"
@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 2018_08_22_100621) do
   create_table "user_lessons", force: :cascade do |t|
     t.integer "lesson_id"
     t.integer "user_id"
-    t.integer "percent"
-    t.boolean "status"
-    t.integer "point"
+    t.integer "percent", default: 0
+    t.boolean "status", default: false
+    t.integer "point", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_user_lessons_on_lesson_id"

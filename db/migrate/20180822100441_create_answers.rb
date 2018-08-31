@@ -3,7 +3,7 @@ class CreateAnswers < ActiveRecord::Migration[5.2]
     create_table :answers do |t|
       t.references :vocabulary
       t.text :content
-      t.boolean :status
+      t.boolean :status, default: false
 
       t.timestamps
     end

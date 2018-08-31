@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="col-md-6">
+    <ol id="vocabulary">
+      <%= render partial: "vocabularies/question", collection: @vocabularies, as: :vocabulary %>
+    </ol>
+  </div>
+  <div class="col-md-4 next-button">
+    <div id="paginator">
+      <%= link_to_next_page @vocabularies, t("next"), class: "glyphicon glyphicon-fast-forward btn icon-button btn-success", remote:true %>
+    </div>
+    <%= link_to t("save"), user_lessons_path, class: "glyphicon glyphicon-floppy-save btn btn-success save-btn" %>
+  </div>
+</div>

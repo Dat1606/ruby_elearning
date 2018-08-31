@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_to root_url
+      redirect_back(fallback_location: root_url)
     else
       flash[:danger] = t "invalid_login"
       redirect_back(fallback_location: root_url)
