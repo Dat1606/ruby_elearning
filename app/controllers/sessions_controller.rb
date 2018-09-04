@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
       redirect_to root_url
     else
-      flash[:danger] = t("invalid_login")
+      flash[:danger] = t "invalid_login"
       redirect_back(fallback_location: root_url)
     end
   end
