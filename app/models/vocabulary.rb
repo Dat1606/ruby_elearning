@@ -8,7 +8,19 @@ class Vocabulary < ApplicationRecord
     includes(:lesson).where("lesson_id = ?", lesson_id)
   end
 
+  def self.find_by_lesson_ids lesson_ids
+    where("lesson_id in (?)", lesson_ids)
+  end
+
   def self.find_by_result result_vocabulary_id
     includes(:result).where("id = ?", result_vocabulary_id)
+  end
+
+  def self.find_by_ids vocabulary_ids
+    where("id IN (?)", vocabulary_ids)
+  end
+
+  def self.find_unlearned_words learned_word_ids
+    where.not("id IN (?)", learned_word_ids)
   end
 end

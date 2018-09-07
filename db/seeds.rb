@@ -22,3 +22,28 @@ Vocabulary.create! name: "い", lesson_id: 4, description:"い is pronounced lik
 Vocabulary.create! name: "う", lesson_id: 4, description:"う is pronounced like the 'oo' in 'oooo… ahhh!'", example: "うんどう. Romaji: 'u'."
 Vocabulary.create! name: "え", lesson_id: 4, description:"え is pronounced like the 'e' in 'exotic' or the 'e' in 'egg.'", example: "えいが. Romaji: 'e'."
 Vocabulary.create! name: "お", lesson_id: 4, description:"お is pronounced like you're saying 'oh.' It also sounds like the 'o' in 'original.'", example: "おんな. Romaji: 'o'."
+
+Answer.create! content: "An institution for educating children", status: true, vocabulary_id: 1
+3.times do 
+  Answer.create! content: "A beautiful place.", vocabulary_id: 1
+end
+
+Answer.create! content: "A small book with blank or ruled pages for writing notes in.", status: true, vocabulary_id: 2
+3.times do 
+  Answer.create! content: "A beautiful place.", vocabulary_id: 2
+end
+
+Answer.create! content: "The head of a school, college, or other educational institution.", status: true, vocabulary_id: 3
+3.times do 
+  Answer.create! content: "A beautiful place.", vocabulary_id: 3
+end
+
+Answer.create! content: "A person who teaches, especially in a school.", status: true, vocabulary_id: 4
+3.times do 
+  Answer.create! content: "A beautiful place.", vocabulary_id: 4
+end
+
+Answer.create! content: "A person or thing that is being discussed, described, or dealt with.", status: true, vocabulary_id: 5
+3.times do 
+  Answer.create! content: "A beautiful place.", vocabulary_id: 5
+end

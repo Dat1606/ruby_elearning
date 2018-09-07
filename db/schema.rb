@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_100621) do
     t.integer "user_lesson_id"
     t.integer "vocabulary_id"
     t.integer "answer_id"
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["answer_id"], name: "index_results_on_answer_id"

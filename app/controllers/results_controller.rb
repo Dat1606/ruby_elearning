@@ -5,6 +5,7 @@ class ResultsController < ApplicationController
     @answer = Answer.find_by id: @result.answer_id
     if @result.save
       if @answer.status == true
+        @result.update_attribute(:status, true)
         @user_lesson.update_attribute(:point, (@user_lesson.point += 1))
       end
       respond_to do |format|
