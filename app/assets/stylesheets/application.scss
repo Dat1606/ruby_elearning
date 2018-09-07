@@ -91,9 +91,8 @@ h1, h2, h3, h4, h5, h6 {
 #top-nav ul li a {
   display:block;
   margin:0;
-  padding:8px 20px;
-  color:green;
   text-decoration:none;
+  margin-top:10px;
 }
 
 #top-nav ul li.active a, #top-nav ul li a:hover {
@@ -350,4 +349,33 @@ h1, h2, h3, h4, h5, h6 {
   color: #666;
   font-size: 1em;
   font-style: italic;
+}
+
+.start-lesson-btn {
+  margin-top: 50px;
+}
+
+.log-out-btn {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.wrong-answer {
+  color: red;
+}
+
+.correct-answer {
+  color: blue;
+}
+
+#paginator {
+  width:30%;
+}
+
+.next-button {
+  margin-top: 90px;
+}
+
+.save-btn {
+  margin-top:5px;
 }

@@ -1,3 +1,17 @@
+<% if logged_in? %>
+  <% if (Answer.find_by_vocabulary @vocabularies[0].id).any? %>
+  <h3 class="text-center start-lesson-btn">
+    <%= form_for UserLesson.new do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :lesson_id, value: params[:id] %>
+      <%= f.submit t("practice_this_lesson"), class: "btn btn-success" %>
+    <% end %>
+  </h3>
+  <% else %>
+  <% end %>
+<% else %>
+  <h3 class="text-center"><button class="text-center start-lesson-btn btn btn-success" data-toggle="modal" data-target="#login"><%= t "practice_this_lesson" %></button></h3>
+<% end %>
 <div class="word-list">
   <ol><%= render @vocabularies %></ol>
 </div>

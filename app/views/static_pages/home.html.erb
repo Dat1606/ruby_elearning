@@ -9,7 +9,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
       <div class="carousel-caption carousel-button">
-        <button class="btn btn-success start-lesson-btn btn-lg"><%= t "start_lesson" %></button>
+        <%= link_to t("start_lesson"), course_path(1), class: "btn btn-success start-lesson-btn btn-lg"%>
       </div>
     <div class="item active">
       <img src="assets/image1.jpg" class="carousel-image">

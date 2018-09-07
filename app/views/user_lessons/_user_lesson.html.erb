@@ -1,0 +1,11 @@
+<li>
+  <h3><%= link_to user_lesson.lesson.name, user_lesson_url(user_lesson) %></h3>
+  <p><%= t "point" %><%= user_lesson.point %>/<%= user_lesson.lesson.vocabularies.count %></p>
+  <% if user_lesson.point < user_lesson.lesson.vocabularies.count %>
+    <%= form_for UserLesson.new do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :lesson_id, value: user_lesson.lesson.id %>
+      <%= f.submit t("retake_the_test"), class: "btn btn-success" %>
+    <% end %>
+  <% end %>
+</li>

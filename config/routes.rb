@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :courses, only: :show
   resources :lessons, only: :show
   resources :vocabularies, only: [:show, :index]
+  resources :user_lessons
+  resources :results, only: [:create, :destroy]
 end

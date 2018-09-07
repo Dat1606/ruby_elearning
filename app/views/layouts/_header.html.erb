@@ -4,28 +4,26 @@
       <h1><span><%= link_to t(".fastking"), root_path %></span></h1>
     </div>
     <div id="top-nav">
-      <% unless logged_in? %>
-        <ul>
-          <li> 
-            <div class="dropdown"><button class="btn glyphicon glyphicon-th-list btn-success  dropbtn">
-              <b class="text-center"><%= t "courses" %></b></button>
-              <div class="dropdown-content">
-                <%= render @courses %>
-              </div>
+      <ul>
+        <li> 
+          <div class="dropdown"><button class="btn glyphicon glyphicon-th-list btn-success  dropbtn">
+            <b class="text-center"><%= t "courses" %></b></button>
+            <div class="dropdown-content">
+              <%= render @courses %>
             </div>
-          </li>
+          </div>
+        </li>
+        <% unless logged_in? %>
           <li><button class="btn btn-success sign_up_button" data-toggle="modal" data-target="#signup"><%= t "sign_up" %></button></li>
           <li><button class="btn btn-success sign_up_button" data-toggle="modal" data-target="#login"><%= t "log_in" %></button></li>
-        </ul>
-        <%= render "layouts/sign_up_modal" %>
-        <%= render "layouts/log_in_modal" %>
-      <% else %>
-        <ul>
-          <li>
+          <%= render "layouts/sign_up_modal" %>
+          <%= render "layouts/log_in_modal" %>
+        <% else %>
+          <li class="log-out-btn">
             <%= link_to t("log_out"), logout_path, method: :delete, class: "btn btn-success" %>
           </li>
-        </ul>
-      <% end %>
+        <% end %>
+      </ul>
     </div>
     <div class="clr"></div>
   </div>

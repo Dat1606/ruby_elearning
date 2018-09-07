@@ -1,0 +1,33 @@
+<li>
+  <p class="vocabulary"><%= link_to vocabulary.name, vocabulary %></p>
+  <h4><%= t "find_the_definition" %></h4>
+  <%= form_for @new_result, remote: true do |f| %>
+    <%= f.hidden_field :user_lesson_id, value: params[:id] %>
+    <%= f.hidden_field :vocabulary_id, value: vocabulary.id %>
+    <ol>
+    <%= f.collection_radio_buttons  :answer_id, Answer.find_by_vocabulary(vocabulary.id), :id, :content do |b| %>
+      <li>
+        <%= b.radio_button(class: "check-box") %>
+        <%= b.label(class:"styled-checkbox") %>
+      </li>
+    <% end %>
+    </ol>
+    <h4 id="hidden-answer<%= vocabulary.id %>"></h4>
+    <h4 id="hidden-example<%= vocabulary.id %>"></h4>
+    <% if @result.nil? %>
+      <%= f.submit t("see_answer"), class: "btn btn-success" %>
+    <% elsif @result.answer.status == false  %>
+      <h5>
+        <%= t "your_answer" %>
+        <span class="wrong-answer"><%= @result.answer.content %> <span class="glyphicon glyphicon-remove"></span></span>
+      </h5>
+      <h4><%= t "definition" %><%= vocabulary.description %></h4>
+    <% elsif @result.answer.status == true  %>
+      <h5>
+        <%= t "your_answer" %>
+        <span class="correct-answer"><%= @result.answer.content %> <span class="glyphicon glyphicon-ok"></span></span>
+      </h5>
+      <h4><%= t "example" %><%= vocabulary.example %></h4>
+    <% end %>
+  <% end %>
+</li>
