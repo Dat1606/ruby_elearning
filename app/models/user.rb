@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.password.minimum}
   validates_format_of :name, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/
   attr_accessor :remember_token
+  mount_uploader :avatar, PictureUploader
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
