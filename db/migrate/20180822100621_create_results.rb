@@ -4,6 +4,7 @@ class CreateResults < ActiveRecord::Migration[5.2]
       t.references :user_lesson
       t.references :vocabulary
       t.references :answer
+      t.boolean :status, default: false
 
       t.timestamps
     end

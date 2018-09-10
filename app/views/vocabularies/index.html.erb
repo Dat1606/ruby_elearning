@@ -1,0 +1,18 @@
+<div class="container">
+<div class="col-md-4 word-selects" style="margin-top: 30px;">
+    <select id="select-lessons" class="form-control">
+      <option value="0"><%= t "all_lesson" %></option>
+      <%= render partial: "lessons/lesson_for_filter", collection: @lessons, as: :lesson %>
+    </select>
+  </div>
+  <div class="col-md-4" style="margin-top: 30px;">
+    <select id="select-words" class="form-control">
+      <option value="0"><%= t "all_words" %></option>
+      <option value="1"><%= t "learned_words" %></option>
+      <option value="2"><%= t "unlearned_words" %></option>
+    </select>
+  </div>
+  <div id="word-list">
+    <ol><%= render @vocabularies %></ol>
+  </div>
+</div>

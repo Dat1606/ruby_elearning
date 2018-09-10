@@ -19,6 +19,7 @@
           <%= render "layouts/sign_up_modal" %>
           <%= render "layouts/log_in_modal" %>
         <% else %>
+          <li><%= link_to t("word_list"), vocabularies_path, class: "btn btn-success glyphicon glyphicon-text-background word-list-btn" %></li>
           <li class="log-out-btn">
             <%= link_to t("log_out"), logout_path, method: :delete, class: "btn btn-success" %>
           </li>
