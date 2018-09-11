@@ -75,3 +75,15 @@ en:
   unlearned_words: "Unlearned Words"
   all_lesson: "All Lessons"
   word_list: " WordList"
+  email: "Email: "
+  total_point: "Total Point: "
+  lesson_name: "Lesson"
+  status: "Status"
+  created_at: "Created Date"
+  passed: "Passed"
+  try_again: "Try again"
+  time:
+    formats:
+      own: "%d-%m-%Y"
+  account: "Account"
+  my_account: "My account"

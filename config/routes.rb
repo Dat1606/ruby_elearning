@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :vocabularies, only: [:show, :index]
   resources :user_lessons
   resources :results, only: [:create, :destroy]
+  resources :users
 end
