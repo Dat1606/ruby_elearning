@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  has_many :lessons
+  has_many :lessons, dependent: :destroy
   mount_uploader :image, PictureUploader
 
   def self.find_other_courses current_course_id

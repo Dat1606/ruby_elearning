@@ -1,3 +1,9 @@
+User.create!(name:  "Admin",
+  email: "admin@project1.com",
+  password:              "admin@project1.com",
+  password_confirmation: "admin@project1.com",
+  admin: true)
+
 Course.create! name: "English Course", image: File.open(File.join(Rails.root,"app/assets/images/english_course.jpg")),
   description: "All our English courses are designed and delivered by highly qualified teachers and are proven to get results. But we know there are millions of people who would love to improve their English skills but just can’t find the time or right location to take a course just now. 
     That’s why we have created the world’s largest English language online resource. This means we can support your learning, whatever your level, whatever your preferred media by giving you access to thousands of FREE and paid for digital learning tools, online courses, mobile apps, downloads, print, radio, TV as well the world’s biggest English language social media community."

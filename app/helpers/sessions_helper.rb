@@ -51,6 +51,12 @@ module SessionsHelper
     session[:forwarding_url] = request.original_url if request.get?
   end
 
+  def admin_user
+    if admin_user?
+     @current_user ||= User.find_by(id: user_id)
+     end
+   end
+ 
   def admin_user?
     current_user.admin?
   end

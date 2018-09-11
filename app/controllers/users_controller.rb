@@ -59,6 +59,7 @@ class UsersController < ApplicationController
 
   def calculate_point
     @user = User.find_by id: params[:id]
+    return unless @user
     # Return current user's point
     @user_point = (UserLesson.find_by_user @user.id).pluck(:point).inject(0){|sum,x| sum + x }
   end

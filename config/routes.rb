@@ -12,4 +12,11 @@ Rails.application.routes.draw do
   resources :user_lessons
   resources :results, only: [:create, :destroy]
   resources :users
+
+  namespace :admin do
+    get "/",     to: "sessions#new"
+    post "/login",    to: "sessions#create"
+    resources :lessons
+    resources :vocabularies
+  end
 end
