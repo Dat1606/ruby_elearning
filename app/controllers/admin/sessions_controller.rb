@@ -1,5 +1,4 @@
-class Admin::SessionsController < ApplicationController
-  layout "admin"
+class Admin::SessionsController < Admin::AdminBaseController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -7,13 +6,16 @@ class Admin::SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
       if admin_user?
-        flash[:info] = "Welcome Master!"
+        flash[:info] = t "welcome_master"
         redirect_to admin_lessons_path
       else
-      log_out if logged_in?
-      flash[:danger] = t("invalid_login")
-      redirect_back(fallback_location: root_url)
+        log_out if logged_in?
+        flash[:danger] = t("invalid_login")
+        render :new
       end
+    else
+      flash[:danger] = t("invalid_login")
+      render :new
     end
   end
 

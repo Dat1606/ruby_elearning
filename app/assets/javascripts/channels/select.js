@@ -12,3 +12,16 @@ $(document).ready(function(){
     })
   });
 });
+
+$(document).ready(function(){
+  $('#select-vocabulary-lesson').change(function() {
+    var lessons = $('#select-vocabulary-lesson').val()
+    $.ajax({
+      url: '/admin/vocabularies',
+      method: 'GET',
+      data: {
+        lessons: lessons
+      }
+    })
+  });
+});

@@ -1,0 +1,23 @@
+<div class="col-md-6 col-md-offset-2 admin-form">
+  <h3><%= t "vocabulary" %></h3>
+  <%= form_for [:admin, @vocabulary] do |f| %>
+    <%= f.label :Choose_lesson %>
+    <%= f.collection_select :lesson_id, Lesson.order(:name),:id,:name,  {}, class: "form-control"%>
+    <%= f.label :Set_Vocabulary_name %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :Set_Vocabulary_description %>
+    <%= f.text_area :description, class: "form-control" %>
+    <%= f.label :Add_example %>
+    <%= f.text_area :example, class: "form-control" %>
+    <h3><%= t "add_answer" %></h3>
+    <%= f.fields_for :answers do |a| %>
+      <div class="fields">
+        <h3><%= t "answer" %></h3>
+        <%= a.text_field :content, class: "form-control" %>
+        <%= a.check_box :status, class:"check-box" %>
+        <%= a.label :status, t("right_answer").html_safe %>
+      </div>
+    <% end %>
+    <%= f.submit t("create_vocabulary"), class: "btn btn-primary submit-btn" %>
+  <% end %>
+</div>
