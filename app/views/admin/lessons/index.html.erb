@@ -1,0 +1,19 @@
+<div class="col-md-6 col-md-offset-3 admin-table">
+  <%= link_to new_admin_lesson_path , class: "btn btn-success create-btn" do %>
+    <i class="glyphicon glyphicon-plus"></i>
+    <%= t "create_new_lesson" %>
+  <% end %>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th class="col-md-1 text-center"><%= t "number" %></th>
+        <th class="col-md-2 text-center"><%= t "lesson_name" %></th>
+        <th class="col-md-2 text-center"><%= t "action" %></th>
+      </tr>
+    </thead>
+    <tbody id="requests-table">
+      <%= render @lessons %>
+    </tbody>
+  </table>
+    <%= paginate @lessons %>
+</div>

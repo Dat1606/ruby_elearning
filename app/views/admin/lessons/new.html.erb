@@ -1,0 +1,16 @@
+<div class="col-md-6 col-md-offset-2">
+  <h3><%= t "lesson" %></h3>
+  <%= form_for [:admin, Lesson.new] do |f| %>
+    <%= f.label :Select_course %>
+    <%= f.collection_select :course_id, Course.order(:name),:id,:name,  {}, class: "form-control"  %>
+    <%= f.label :Set_lesson_name %>
+    <%= f.text_field :name , class: "form-control"%>
+      <ul>
+        <%= f.fields_for :vocabularies do |l| %>
+          <%= render "admin/lessons/vocabulary_fields" %>
+        <% end %>
+      </ul>
+    <%= link_to_add_fields(t("add_vocabulary"), f, :vocabularies) %>
+    <%= f.submit t("create_this_lesson"), class: "btn btn-primary submit-btn" %>
+  <% end %>
+</div>

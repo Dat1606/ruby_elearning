@@ -1,0 +1,24 @@
+<div class="col-md-6 col-md-offset-2">
+  <h3><%= t "lesson" %></h3>
+  <%= form_for [:admin, @lesson] do |f| %>
+    <%= f.label :Select_course %>
+    <%= f.collection_select :course_id, Course.order(:name),:id,:name,  {}, class: "form-control"  %>
+    <%= f.label :Set_lesson_name %>
+    <%= f.text_field :name , class: "form-control"%>
+
+    <% @vocabularies.each do %>
+      <%= f.fields_for :vocabularies do |v| %>
+        <h3><%= t "vocabulary" %></h3>
+        <%= v.label :Set_vocabulary_name %>
+        <%= v.text_field :name, class: "form-control" %>
+        <%= v.label :Set_vocabulary_description %>
+        <%= v.text_area :description, class: "form-control" %>
+        <%= v.label :Set_vocabulary_example %>
+        <%= v.text_area :example, class: "form-control" %>
+        <%= v.hidden_field :_destroy %>
+      <% end %>
+    <% end %>
+
+    <%= f.submit t("save_change"), class: "btn btn-primary submit-btn" %>
+  <% end %>
+</div>

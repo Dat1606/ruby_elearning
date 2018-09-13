@@ -1,0 +1,11 @@
+<div class="fields">
+  <h3><%= t "vocabulary" %></h3>
+  <%= f.label :Set_vocabulary_name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :Set_vocabulary_description %>
+  <%= f.text_area :description, class: "form-control" %>
+  <%= f.label :Set_vocabulary_example %>
+  <%= f.text_area :example, class: "form-control" %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to t("remove_vocabulary"), "#", onClick: "removeField(this); return false;" %>
+</div>

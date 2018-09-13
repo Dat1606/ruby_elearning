@@ -1,6 +1,9 @@
 class Vocabulary < ApplicationRecord
   belongs_to :lesson
   has_many :anwers
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :example, presence: true
   enum status: {not_answered_yet: 0, right: 1, wrong: 2}
   paginates_per 1
 

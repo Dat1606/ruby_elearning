@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-1 admin-table">
+  <%= link_to new_admin_vocabulary_path , class: "btn btn-success create-btn" do %>
+    <i class="glyphicon glyphicon-plus"></i>
+    <%= t "create_new_lesson" %>
+  <% end %>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th class="col-md-1 text-center"><%= t "number" %></th>
+        <th class="col-md-2 text-center"><%= t "word_name" %></th>
+        <th class="col-md-2 text-center"><%= t "belong_to" %></th>
+        <th class="col-md-2 text-center"><%= t "description" %></th>
+        <th class="col-md-2 text-center"><%= t "example" %></th>
+        <th class="col-md-2 text-center"><%= t "action" %></th>
+      </tr>
+    </thead>
+    <tbody id="requests-table">
+      <%= render @lessons %>
+    </tbody>
+  </table>
+    <%= paginate @lessons %>
+</div>
