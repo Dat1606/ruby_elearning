@@ -1,7 +1,7 @@
 <tr>
   <td class="text-center"><b><%= link_to user_lesson.lesson_name, user_lesson_url(user_lesson) %></b></td>
-  <td class="text-center"><b><%= user_lesson.point %>/<%= count_vocabulary %></b></td>
-  <% if user_lesson.point == user_lesson.lesson.vocabularies.count %>
+  <td class="text-center"><b><%= user_lesson.point %>/<%= count_vocabulary(user_lesson) %></b></td>
+  <% if user_lesson.point == count_vocabulary(user_lesson) %>
     <td class="text-center passed_status"><b><%= t "passed" %></b></td>
   <% else %>
     <td class="text-center failed_status"><b><%= t "try_again" %></b></td>
