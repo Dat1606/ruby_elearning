@@ -55,7 +55,7 @@ module SessionsHelper
     if admin_user?
      @current_user ||= User.find_by(id: user_id)
      end
-   end
+  end
  
   def admin_user?
     current_user.admin?

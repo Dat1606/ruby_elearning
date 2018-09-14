@@ -1,9 +1,11 @@
 class Vocabulary < ApplicationRecord
   belongs_to :lesson
-  has_many :anwers
+  has_many :answers, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
   validates :example, presence: true
+  delegate :name, to: :lesson, prefix: true
+  accepts_nested_attributes_for :answers, allow_destroy: true
   enum status: {not_answered_yet: 0, right: 1, wrong: 2}
   paginates_per 1
 

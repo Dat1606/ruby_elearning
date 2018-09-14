@@ -10,7 +10,9 @@
 
   <body>
     <div class="container-fluid">
-      <%= render "layouts/control_bar"%>
+      <% if logged_in? && admin_user? %>
+        <%= render "layouts/control_bar"%>
+      <% end %>
       <div class="col-md-10 show_content">
         <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>

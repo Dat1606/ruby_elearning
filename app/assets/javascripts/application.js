@@ -19,3 +19,10 @@ function removeField(link) {
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".fields").fadeOut();
 }
+
+$(document).ready(function() {
+  $(".check-box").change(function() {
+    $(".check-box").prop('checked', false);
+    $(this).prop('checked', true);
+  });  
+});

@@ -1,6 +1,5 @@
-class Admin::LessonsController < ApplicationController
-  layout "admin"
-  before_action :load_lesson, only: [:edit, :update, :destroy]
+class Admin::LessonsController < Admin::AdminBaseController
+  before_action :load_lesson, except: [:new, :index]
   before_action :logged_in_user, :admin_user
   
   def index
