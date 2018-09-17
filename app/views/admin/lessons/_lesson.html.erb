@@ -2,9 +2,9 @@
   <td class= "text-center"><%= lesson.id.to_s %></td>
   <td class= "text-center lesson-name"><%= lesson.name %></td>
   <td class="text-center">
-    <%= link_to edit_admin_lesson_path(lesson), class: "glyphicon glyphicon-pencil", title: t("edit") do %>
+    <%= link_to edit_admin_lesson_path(lesson), class: "glyphicon glyphicon-pencil icon-size", title: t("edit") do %>
       <a href="#" class="fa fa-edit edit-btn"></a>
     <% end %>
-    <%= link_to "", admin_lesson_path(lesson), class: "trash glyphicon glyphicon-trash", title: t("delete"), method: :delete, data: {confirm: t("are_you_sure")} %>
+    <%= link_to "", admin_lesson_path(lesson), class: "trash glyphicon glyphicon-trash icon-size", title: t("delete"), method: :delete, data: {confirm: t("are_you_sure")} %>
   </td>
 </tr>

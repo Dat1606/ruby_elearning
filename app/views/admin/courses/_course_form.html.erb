@@ -1,0 +1,12 @@
+<div class="col-md-6 col-md-offset-2 admin-form">
+  <h3><%= t "course" %></h3>
+  <%= form_for [:admin, @course] do |f| %>
+    <%= f.label :Set_Course_name %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :Set_Course_description %>
+    <%= f.text_area :description, class: "form-control", size: "30x12" %>
+    <%= f.label :Upload_Picture %>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
+    <%= f.submit t("create_vocabulary"), class: "btn btn-primary submit-btn" %>
+  <% end %>
+</div>
