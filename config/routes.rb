@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get "/",     to: "sessions#new"
     post "/login",    to: "sessions#create"
     resources :lessons
-    resources :vocabularies
+    resources :vocabularies, except: :show
+    resources :courses
   end
 end

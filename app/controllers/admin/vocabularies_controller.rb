@@ -11,7 +11,8 @@ class Admin::VocabulariesController < Admin::AdminBaseController
         respond_to :js
       else
         @lesson = Lesson.find_by id: params[:lessons]
-        @vocabularies = Vocabulary.find_by_lesson @lesson.id
+        return unless @lesson
+        @vocabularies = Vocabulary.find_by_lesson(@lesson.id).per(25)
         respond_to :js
       end
     end
