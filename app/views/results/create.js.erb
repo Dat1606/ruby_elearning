@@ -1,6 +1,5 @@
 <% if @result.save %>
-  $("#hidden-answer<%= @vocabulary.id %>").html("<%= t "definition" %><%= @vocabulary.description %>");
-  $("#hidden-example<%= @vocabulary.id %>").html("<%= t "example" %><%= @vocabulary.example %>");
+  $("#submit-btn<%= @vocabulary.id %>").html("<%= j render "vocabularies/submit_btn" %>")
 <% else %>
   $("#hidden-answer<%= @vocabulary.id %>").html("<%= t "please_select_your_answer" %>");
 <% end %>

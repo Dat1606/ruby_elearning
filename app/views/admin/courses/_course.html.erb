@@ -1,0 +1,11 @@
+<tr>
+  <td class= "text-center"><%= course.id.to_s %></td>
+  <td class= "text-center lesson-name"><%= course.name %></td>
+  <td class= "text-center lesson-name"><%= image_tag course.image.url, class: "admin-course-image" %></td>
+  <td class="text-center">
+    <%= link_to edit_admin_course_path(course), class: "glyphicon glyphicon-pencil icon-size", title: t("edit") do %>
+      <a href="#" class="fa fa-edit edit-btn"></a>
+    <% end %>
+    <%= link_to "", admin_course_path(course), class: "trash glyphicon glyphicon-trash icon-size", title: t("delete"), method: :delete, data: {confirm: t("are_you_sure")} %>
+  </td>
+</tr>

@@ -25,4 +25,4 @@ $(document).ready(function() {
     $(".check-box").prop('checked', false);
     $(this).prop('checked', true);
   });  
-});
+}); 

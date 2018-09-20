@@ -1,0 +1,16 @@
+    <% if @result.nil? %>
+      <%= submit_tag t("see_answer"), class: "btn btn-success" %>
+    <% elsif @result.answer.status == false  %>
+      <h5>
+        <%= t "your_answer" %>
+        <span class="wrong-answer"><%= @result.answer.content %> <span class="glyphicon glyphicon-remove"></span></span>
+      </h5>
+      <h4><%= t "definition" %><%= @vocabulary.description %></h4>
+    <% elsif @result.answer.status == true  %>
+      <h5>
+        <%= t "your_answer" %>
+        <span class="correct-answer"><%= @result.answer.content %> <span class="glyphicon glyphicon-ok"></span></span>
+      </h5>
+      <h4><%= t "example" %><%= @vocabulary.example %></h4>
+    <% end %>
+    </div>

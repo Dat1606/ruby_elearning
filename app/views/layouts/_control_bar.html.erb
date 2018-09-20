@@ -3,12 +3,15 @@
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
     <div class="menu-list">
       <ul id="menu-content" class="menu-content collapse out">
-        <a href="<%= admin_lessons_path %>" class="category">
-          <li><i class="glyphicon glyphicon-list-alt"></i> <%= t "lesson_managerment" %></li>
-        </a>
-        <a href="<%= admin_vocabularies_path %>" class="category">
-          <li><i class="glyphicon glyphicon-list-alt"></i> <%= t "vocabulary_managerment" %></li>
-        </a>
+        <%= link_to admin_courses_path, class: "log-out-row" do %>
+          <li><i class="glyphicon glyphicon-list-alt"></i> <%= t "course_management"%></li>
+        <% end %>
+        <%= link_to admin_lessons_path, class: "log-out-row" do %>
+          <li><i class="glyphicon glyphicon-list-alt"></i> <%= t "lesson_management"%></li>
+        <% end %>
+        <%= link_to admin_vocabularies_path, class: "log-out-row" do %>
+          <li><i class="glyphicon glyphicon-list-alt"></i> <%= t "vocabulary_management"%></li>
+        <% end %>
         <%= link_to logout_path, method: :delete, class: "log-out-row"  do %>
           <i class="glyphicon glyphicon-log-out"></i><%= t "log_out" %>
         <% end %>

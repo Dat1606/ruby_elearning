@@ -3,7 +3,11 @@ class Admin::LessonsController < Admin::AdminBaseController
   before_action :logged_in_user, :admin_user
   
   def index
-    @lessons = Lesson.order(:id).page params[:page]
+    if admin_user?
+      @lessons = Lesson.order(:id).page params[:page]
+    else
+      redirect_to root_path
+    end
   end
 
   def new; end

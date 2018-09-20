@@ -61,6 +61,6 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     return unless @user
     # Return current user's point
-    @user_point = (UserLesson.find_by_user @user.id).pluck(:point).inject(0){|sum,x| sum + x }
+    @user_point = (UserLesson.where(user_id: @user.id)).pluck(:point).inject(0){|sum,x| sum + x }
   end
 end
