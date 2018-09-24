@@ -23,6 +23,9 @@ gem "font-awesome-rails"
 gem "carrierwave",     "1.2.2"
 gem "mini_magick",     "4.7.0"
 gem "jquery-ui-rails"
+gem "delayed_job_active_record"
+gem "figaro"
+gem "daemons"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

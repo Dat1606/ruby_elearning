@@ -126,3 +126,7 @@ en:
   course_created: "Course created"
   we_will_add_words: "We will add words for this lesson soon!"
   greeting: "Welcome !!"
+  hello: "Hello "
+  test_not_completed: "TEST NOT COMPLETED"
+  you_have_test_not_completed: "You have the following test that have not been completed for 8 hours:"
+  do_test: "Do the test now"

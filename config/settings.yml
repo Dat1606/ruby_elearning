@@ -9,3 +9,6 @@ password:
 
 answer:
   number: 4
+
+user_lesson:
+  time: 8

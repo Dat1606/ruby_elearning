@@ -9,11 +9,20 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.smtp_settings = {
+    address: ENV["FORDER_EMAIL_ADDRESS"],
+    port: 587,
+    domain: ENV["FORDER_EMAIL_DOMAIN"],
+    user_name: ENV["FORDER_EMAIL_USERNAME"],
+    password: ENV["FORDER_EMAIL_PASSWORD"],
+    authentication: ENV["FORDER_EMAIL_AUTHENTICAION"],
+    enable_starttls_auto: true
+  }
+
   # Show full error reports.
   config.consider_all_requests_local = true
-
-  # Enable/disable caching. By default caching is disabled.
-  # Run rails dev:cache to toggle caching.
+  
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
 

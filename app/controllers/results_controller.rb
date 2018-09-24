@@ -4,6 +4,7 @@ class ResultsController < ApplicationController
   def create
     @answer = Answer.find_by id: @result.answer_id
     if @result.save
+      @user_lesson.update_attribute(:status, 1)
       if @answer.status == true
         @result.update_attribute(:status, true)
         @user_lesson.update_attribute(:point, (@user_lesson.point += 1))
