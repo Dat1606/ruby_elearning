@@ -1,7 +1,7 @@
 class Admin::VocabulariesController < Admin::AdminBaseController
-  before_action :load_vocabulary, only: [:edit, :update, :destroy]
   before_action :logged_in_user, :admin_user
-
+  before_action :load_vocabulary, only: [:edit, :update, :destroy]
+ 
   def index
     @vocabularies = Vocabulary.order(:id).page(params[:page]).per(25)
     @lessons = Lesson.all
@@ -40,7 +40,7 @@ class Admin::VocabulariesController < Admin::AdminBaseController
       if params[:vocabulary][:answers_attributes]["0"][:status] == "1" || params[:vocabulary][:answers_attributes]["1"][:status] == "1" ||
           params[:vocabulary][:answers_attributes]["2"][:status] == "1" || params[:vocabulary][:answers_attributes]["3"][:status] == "1"
     
-        @vocabulary = Vocabulary.new(vocabulary_params)
+        @vocabulary = Vocabulary.new vocabulary_params
         if @vocabulary.save
           flash[:info] = t "vocabulary_created"
           redirect_back(fallback_location: root_path)

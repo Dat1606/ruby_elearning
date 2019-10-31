@@ -10,11 +10,11 @@ class Admin::SessionsController < Admin::AdminBaseController
         redirect_to admin_lessons_path
       else
         log_out if logged_in?
-        flash[:danger] = t("invalid_login")
+        flash[:danger] = t "invalid_login"
         render :new
       end
     else
-      flash[:danger] = t("invalid_login")
+      flash[:danger] = t "invalid_login"
       render :new
     end
   end

@@ -14,6 +14,6 @@ class UserLesson < ApplicationRecord
   end
 
   def send_mail
-    UncompletedTestJob.set(wait: Settings.user_lesson.time.hours).perform_later(self)
+    UncompletedTestJob.set(wait: Settings.user_lesson.time.seconds).perform_later(self)
   end
 end
