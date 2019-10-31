@@ -15,6 +15,18 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.action_mailer.default_url_options = { :host => "e-learning2000.herokuapp.com" }
+
+  config.action_mailer.smtp_settings = {
+    address: ENV["FORDER_EMAIL_ADDRESS"],
+    port: 587,
+    domain: ENV["FORDER_EMAIL_DOMAIN"],
+    user_name: ENV["FORDER_EMAIL_USERNAME"],
+    password: ENV["FORDER_EMAIL_PASSWORD"],
+    authentication: ENV["FORDER_EMAIL_AUTHENTICAION"],
+    enable_starttls_auto: true
+  }
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true

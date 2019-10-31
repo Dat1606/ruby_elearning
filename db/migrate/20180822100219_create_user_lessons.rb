@@ -4,7 +4,7 @@ class CreateUserLessons < ActiveRecord::Migration[5.2]
       t.references :lesson
       t.references :user
       t.integer :percent, default: 0
-      t.boolean :status, default: false
+      t.integer :status, default: 0
       t.integer :point, default: 0
 
       t.timestamps

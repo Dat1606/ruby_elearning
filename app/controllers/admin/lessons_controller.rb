@@ -17,13 +17,13 @@ class Admin::LessonsController < Admin::AdminBaseController
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    @lesson = Lesson.new lesson_params
     if @lesson.save
       flash[:info] = t "lesson_created"
       redirect_back(fallback_location: root_path)
     else
       flash[:danger] = @lesson.errors.full_messages
-      redirect_back(fallback_location: root_path)
+      redirect_back fallback_location: root_path
     end
   end
 
@@ -33,7 +33,7 @@ class Admin::LessonsController < Admin::AdminBaseController
       redirect_to admin_lessons_path
     else
       flash[:danger] = @lesson.errors.full_messages
-      redirect_back(fallback_location: root_path)
+      redirect_back fallback_location: root_path
     end
   end
 
